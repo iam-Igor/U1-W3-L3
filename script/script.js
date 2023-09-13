@@ -41,7 +41,7 @@ const deleteFunction = function (event) {
   input.value = "";
 };
 const deleteButton = document.querySelectorAll(".delete");
-for (let i = 0; i <= deleteButton.length; i++) {
+for (let i = 0; i < deleteButton.length; i++) {
   deleteButton[i].addEventListener("click", deleteFunction);
 }
 
@@ -49,7 +49,7 @@ const underlineDone = function (event) {
   const underlineRow = event.target;
   const input2 = underlineRow.previousElementSibling;
   const input3 = input2.previousElementSibling;
-  input3.style.textDecoration = "underline overline";
+  input3.style.textDecoration = "line-through";
 };
 
 const doneButton = document.querySelectorAll(".done");
