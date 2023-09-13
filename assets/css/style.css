@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Ubuntu:wght@300;400&display=swap");
+
+.container {
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #1f97f1;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Righteous", cursive;
+}
+
+button {
+  display: inline-block;
+  font-family: "Righteous", cursive;
+}
+hr {
+  border: 1.5px solid white;
+}
+
+.container div {
+  margin-bottom: 5px;
+}
+
+input,
+button {
+  border-radius: 5px;
+}
+
+.delete {
+  background-color: #db3b30;
+}
+.done {
+  background-color: #4bb253;
+}
