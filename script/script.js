@@ -15,9 +15,12 @@ const firstButton = function () {
     e.preventDefault();
 
     if (i < insertedTask.length) {
-      insertedTask[i].value = toDo.value;
+      if (i > 0) {
+        insertedTask[i].value = insertedTask[i - 1].value;
+      } else {
+        insertedTask[i].value = toDo.value;
+      }
       i++;
-      toDo.value = "";
 
       if (i < insertedTask.length) {
         insertedTask[i].focus();
@@ -28,3 +31,28 @@ const firstButton = function () {
 
 const goButton = document.getElementById("go");
 goButton.addEventListener("click", firstButton);
+
+const main = document.getElementsByTagName("main");
+
+const deleteFunction = function (event) {
+  const deleteRow = event.target;
+
+  const input = deleteRow.previousElementSibling;
+  input.value = "";
+};
+const deleteButton = document.querySelectorAll(".delete");
+for (let i = 0; i <= deleteButton.length; i++) {
+  deleteButton[i].addEventListener("click", deleteFunction);
+}
+
+const underlineDone = function (event) {
+  const underlineRow = event.target;
+  const input2 = underlineRow.previousElementSibling;
+  const input3 = input2.previousElementSibling;
+  input3.style.textDecoration = "underline overline";
+};
+
+const doneButton = document.querySelectorAll(".done");
+for (let x = 0; x < doneButton.length; x++) {
+  doneButton[x].addEventListener("click", underlineDone);
+}
