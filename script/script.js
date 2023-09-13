@@ -1,23 +1,30 @@
-const form = document.getElementById("task-list");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+const firstButton = function () {
+  const form = document.getElementById("task-list");
 
   const toDo = document.getElementById("task-to-do");
-  const first = document.getElementById("first-task");
-  const second = document.getElementById("second-task");
-  const third = document.getElementById("third-task");
-  const fourth = document.getElementById("fourth-task");
-  const fifth = document.getElementById("fifth-task");
+  const insertedTask = [
+    document.getElementById("first-task"),
+    document.getElementById("second-task"),
+    document.getElementById("third-task"),
+    document.getElementById("fourth-task"),
+    document.getElementById("fifth-task"),
+  ];
 
-  const insertedTask = {
-    newtask: toDo.value,
-    firstTask: first.value,
-    secondtask: second.value,
-    thirdTask: third.value,
-    fourthTask: fourth.value,
-    fifthTask: fifth.value,
-  };
+  let i = 0;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  first.innerHTML = `${insertedTask.newtask}`;
-});
+    if (i < insertedTask.length) {
+      insertedTask[i].value = toDo.value;
+      i++;
+      toDo.value = "";
+
+      if (i < insertedTask.length) {
+        insertedTask[i].focus();
+      }
+    }
+  });
+};
+
+const goButton = document.getElementById("go");
+goButton.addEventListener("click", firstButton);
