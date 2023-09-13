@@ -52,10 +52,11 @@ const underlineDone = function (event) {
   const form = document.getElementById("task-list");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    const input2 = underlineRow.previousElementSibling;
+    const input3 = input2.previousElementSibling;
+    input3.style.textDecoration = "line-through";
   });
-  const input2 = underlineRow.previousElementSibling;
-  const input3 = input2.previousElementSibling;
-  input3.style.textDecoration = "line-through";
 };
 
 const doneButton = document.querySelectorAll(".done");

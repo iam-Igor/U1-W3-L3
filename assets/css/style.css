@@ -6,7 +6,8 @@
   margin-left: auto;
   border: 2px solid black;
   padding: 10px;
-  background-color: #1f97f1;
+  background: linear-gradient(180deg, #ecee10, #fab0b7);
+  border-radius: 20px;
 }
 
 h1 {
