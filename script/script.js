@@ -32,8 +32,6 @@ const firstButton = function () {
 const goButton = document.getElementById("go");
 goButton.addEventListener("click", firstButton);
 
-const main = document.getElementsByTagName("main");
-
 const deleteFunction = function (event) {
   const deleteRow = event.target;
 
@@ -41,12 +39,20 @@ const deleteFunction = function (event) {
   input.value = "";
 };
 const deleteButton = document.querySelectorAll(".delete");
-for (let i = 0; i < deleteButton.length; i++) {
-  deleteButton[i].addEventListener("click", deleteFunction);
-}
+const form = document.getElementById("task-list");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  for (let i = 0; i < deleteButton.length; i++) {
+    deleteButton[i].addEventListener("click", deleteFunction);
+  }
+});
 
 const underlineDone = function (event) {
   const underlineRow = event.target;
+  const form = document.getElementById("task-list");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
   const input2 = underlineRow.previousElementSibling;
   const input3 = input2.previousElementSibling;
   input3.style.textDecoration = "line-through";
